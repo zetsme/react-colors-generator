@@ -1,0 +1,101 @@
+//
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+input {
+  font-family: inherit;
+}
+.form-section {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1rem;
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+//
+.error {
+  outline: 1px solid red;
+  outline-offset: 0.5rem;
+}
+// Form
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  &__control {
+    position: relative;
+    flex-grow: 1;
+    padding-bottom: 2rem;
+  }
+  &__input {
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    ::placeholder {
+      font-family: inherit;
+    }
+  }
+  &__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: red;
+  }
+  &__btn {
+    width: max-content;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    background-color: transparent;
+  }
+}
+// Colors
+$size: 160px;
+.colors-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+  grid-auto-rows: $size * 0.8;
+}
+.color {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  background-color: currentColor;
+  color: var(--color);
+  position: relative;
+  cursor: pointer;
+  & > * {
+    filter: invert(100%);
+  }
+  &__copy {
+    position: absolute;
+    bottom: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
